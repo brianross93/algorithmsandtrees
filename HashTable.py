@@ -54,9 +54,9 @@ class HashTable:
     # if the spot is taken though....
     else:
       pointer = (key_hash + 1) % self.size
-
+    # that right there is our movement
       while pointer != key_hash:
-
+        
         if self.arr[pointer] == None:
           self.arr[pointer] = (key,value)
           return pointer
@@ -83,7 +83,17 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
-    pass
+    
+    
+    if self.arr == None:
+      print("empty")
+      return -1
+    else:
+      for i in range(self.size):
+        print(i)
+    
+
+    
 
 
 
