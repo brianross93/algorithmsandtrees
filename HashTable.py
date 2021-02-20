@@ -85,12 +85,12 @@ class HashTable:
   def print_key_values(self):
     
     
-    if self.arr == None:
+    if self.size == None:
       print("empty")
       return -1
     else:
-      for i in range(self.size):
-        print(i)
+      for i in self.arr:
+        i.print_nodes()
     
 
     
