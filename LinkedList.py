@@ -21,14 +21,16 @@ class LinkedList:
 
     while current != None and not found:
 
-      if current.data == item:
+      if current.data[0] == item[0]:
         found = True
+        
       else:
         current = current.next
         counter += 1
 
     if found:
-      return counter
+      new_tuple = (current.data[0], (current.data[1] + 1 ))
+      current.data = new_tuple
     else:
       return -1
 

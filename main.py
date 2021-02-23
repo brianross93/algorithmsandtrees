@@ -74,7 +74,12 @@ print(f"🖨  All done! Here are all of the words from {filename} and their freq
 
 frequency_counter.print_key_values()
 
+new_counter = 0
 
+for i in frequency_counter.arr:
+  count = i.length()
+  new_counter += count
+print(f"There are {new_counter} unique words")
 
 # THIS IS TO ONLY BE USED FOR TESTING. THIS IS NOT A SOLUTION.
 #test_counter(words_in_file)

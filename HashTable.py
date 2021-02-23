@@ -43,32 +43,17 @@ class HashTable:
   def insert(self, key, value):
     # we're going to find the index for where our key value pair are placed
     key_hash = self.hash_func(key)
+    new_tuple = (key, value)
 
     
 
-    # were gonna check to see if theres something already there
-    if self.arr[key_hash] == None:
-      self.arr[key_hash] = (key, value)
-      return key_hash
+   
+    if self.arr[key_hash].find(new_tuple) == -1:
+      self.arr[key_hash].append(new_tuple)
+      
+    elif self.arr[key_hash].find(new_tuple) == True:
+      self.arr[key_hash]
     
-    # if the spot is taken though....
-    elif self.arr[key_hash] == key_hash:
-      pointer = (key_hash + 1) % self.size
-    # that right there is our movement
-      while pointer != key_hash:
-        
-        if self.arr[pointer] == None:
-          self.arr[pointer] = (key,value)
-          return pointer
-        else: 
-          pointer = (pointer + 1) % self.size
-        
-      
-      
-    self.arr[key_hash].append((key,value))
-    return key_hash
-
-
 
 
   # the print_key_values method.
@@ -92,6 +77,7 @@ class HashTable:
       for i in self.arr:
         
         i.print_nodes()
+        
     
 
     
